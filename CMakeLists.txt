@@ -43,3 +43,15 @@ target_link_libraries(iMX8MP_AR0521_ISP_Tool
 	jsoncpp_lib
 	${LIB_LOG_NAME}
 )
+
+
+# 	Cmake cross compile
+# https://cmake.org/cmake/help/book/mastering-cmake/chapter/Cross%20Compiling%20With%20CMake.html
+# https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html
+# https://kubasejdak.com/how-to-cross-compile-for-embedded-with-cmake-like-a-champ
+
+# https://community.nxp.com/t5/i-MX-Processors/How-to-Build-Cross-Compile-Toolchains-For-i-MX8M/td-p/782981
+# https://kubasejdak.com/how-to-cross-compile-for-embedded-with-cmake-like-a-champ
+# https://github.com/bstubert/embeddeduse/blob/master/BlogPosts/CMakeToolchainFile/toolchain-imx6.cmake
+# https://community.nxp.com/t5/i-MX-Processors-Knowledge-Base/i-MX-8-Hello-World-Linux-ArmV7a-32-bit-and-ArmV8a-64-bit/ta-p/1100128
+# https://thesofproject.github.io/latest/getting_started/nxp/sof_imx_user_guide.html

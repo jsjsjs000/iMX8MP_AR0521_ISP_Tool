@@ -24,8 +24,8 @@
 				"base": "$gcc",
 				"background": {
 					"activeOnStart": true,
-					"beginsPattern":  "Deploying to target",
-					"endsPattern":  "Starting GDB Server on Target"
+					"beginsPattern": "Deploying to target",
+					"endsPattern": "Starting GDB Server on Target"
 				}
 			},
 			"type": "shell",
