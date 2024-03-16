@@ -1,0 +1,19 @@
+{
+	"configurations": [
+		{
+			"name": "Linux",
+			"includePath": [
+				"${workspaceFolder}/**",
+				"/opt/phytec-yogurt-vendor-xwayland/BSP-Yocto-FSL-i.MX8MP-PD21.1.3/sysroots/aarch64-phytec-linux/usr/include/**"
+			],
+			// "defines": [],
+			// "compilerPath": "/usr/bin/gcc",
+			// "cStandard": "c17",
+			// "cppStandard": "gnu++14",
+			// "intelliSenseMode": "clang-arm64",
+			// "intelliSenseMode": "linux-gcc-x64",
+			"configurationProvider": "includePath"
+		}
+	],
+	"version": 4
+}

@@ -1,0 +1,58 @@
+{
+	"version": "2.0.0",
+		/* Configure Yocto SDK Constants from settings.json */
+	"options": {
+		"env": {
+			"CXX": "${config:CXX}",
+			"CC": "${config:CC}",
+		}
+	},
+		/* Configure integrated VS Code Terminal */
+	"presentation": {
+		"echo": false,
+		"reveal": "always",
+		"focus": true,
+		"panel": "dedicated",
+		"showReuseMessage": true,
+	},
+	"tasks": [
+			/* Configure launch.json (debug) preLaunchTask Task */
+		{
+			"label": "var-deploy-gdb",
+			"isBackground": true,
+			"problemMatcher":{
+				"base": "$gcc",
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern":  "Deploying to target",
+					"endsPattern":  "Starting GDB Server on Target"
+				}
+			},
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"var-deploy-gdb.sh",
+				"${config:TARGET_IP}",
+				"${config:BUILD_PATH}",
+				"${config:PROGRAM}",
+				"${config:REMOTE_DIR}"
+			],
+			"dependsOn": ["build"],
+		},
+			/* Configure Build Task */
+		{
+			"label": "build",
+			"type": "shell",
+			"command": "mkdir -p ${config:BUILD_PATH}; cd ${config:BUILD_PATH}; cmake -S .. && make -j$(nproc) && file ${config:PROGRAM}  # && scp ${config:PROGRAM} root@${config:TARGET_IP}:${config:REMOTE_DIR} && ssh root@${config:TARGET_IP} ${config:REMOTE_DIR}/${config:PROGRAM}",
+			"problemMatcher": ["$gcc"],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			}
+		},
+	]
+}
