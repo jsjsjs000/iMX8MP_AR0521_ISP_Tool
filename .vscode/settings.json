@@ -4,6 +4,7 @@
 	"REMOTE_DIR": "/root",
 	"BUILD_PATH": "build",
 	"PROGRAM": "iMX8MP_AR0521_ISP_Tool",
+	"PROGRAM_PARAMS": "",
 
 		/* Yocto SDK Configuration */
 	"ARCH": "aarch64-phytec-linux",
@@ -14,5 +15,6 @@
 	"CC_PREFIX": "${config:OECORE_NATIVE_SYSROOT}/usr/bin/${config:ARCH}/${config:ARCH}-",
 	"CC": "${config:CC_PREFIX}gcc --sysroot=${config:SDKTARGETSYSROOT}",
 	"CXX": "${config:CC_PREFIX}g++ --sysroot=${config:SDKTARGETSYSROOT}",
+
 	"cmake.configureOnOpen": false,
 }

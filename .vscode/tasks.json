@@ -43,7 +43,7 @@
 		{
 			"label": "build",
 			"type": "shell",
-			"command": "mkdir -p ${config:BUILD_PATH}; cd ${config:BUILD_PATH}; cmake -S .. && make -j$(nproc) && file ${config:PROGRAM}  # && scp ${config:PROGRAM} root@${config:TARGET_IP}:${config:REMOTE_DIR} && ssh root@${config:TARGET_IP} ${config:REMOTE_DIR}/${config:PROGRAM}",
+			"command": "mkdir -p ${config:BUILD_PATH}; cd ${config:BUILD_PATH}; cmake -S .. && make -j$(nproc) && file ${config:PROGRAM} && scp ${config:PROGRAM} root@${config:TARGET_IP}:${config:REMOTE_DIR} && ssh root@${config:TARGET_IP} ${config:REMOTE_DIR}/${config:PROGRAM} ${config:PROGRAM_PARAMS}",
 			"problemMatcher": ["$gcc"],
 			"presentation": {
 				"echo": true,
