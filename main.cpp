@@ -112,7 +112,8 @@ bool viv_private_ioctl(const char *cmd, Json::Value& jsonRequest, Json::Value& j
 		reader.parse(ec.string, jsonResponse, true);
 		delete[] ec.string;
 		ec.string = NULL;
-		return jsonResponse["MC_RET"].asInt() == 1; // $$
+		return jsonResponse["result"].asInt() == 0;
+		// return jsonResponse["MC_RET"].asInt(); // $$ - oryginalnie, ale nie działa
 	}
 
 end:
@@ -154,6 +155,7 @@ int main(int argc, char* argv[])
 	if (argc >= 2)
 	{
 		int brightness = atoi(argv[1]);
+		printf("new brightness=%d\n", brightness);
 		set_cproc_brightness(brightness);
 	}
 	else

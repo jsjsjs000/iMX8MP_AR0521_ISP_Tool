@@ -4,7 +4,7 @@
 	"REMOTE_DIR": "/root",
 	"BUILD_PATH": "build",
 	"PROGRAM": "iMX8MP_AR0521_ISP_Tool",
-	"PROGRAM_PARAMS": "",
+	"PROGRAM_PARAMS": "100",
 
 		/* Yocto SDK Configuration */
 	"ARCH": "aarch64-phytec-linux",
